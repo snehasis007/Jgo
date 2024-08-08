@@ -17,7 +17,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'org.sn.Main'
+                'Main-Class': 'org.sn.jgo.driver.JgoDriver'
         )
     }
 }
