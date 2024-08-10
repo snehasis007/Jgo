@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 public final class JgoDriver {
@@ -30,11 +32,16 @@ public final class JgoDriver {
             try{
                 if( p.toFile().getName().endsWith(".jgo")){
                     BufferedReader fs = Files.newBufferedReader(p);
+                    //List<String> sourceBuilder = new ArrayList<>();
+                    StringBuilder source = new StringBuilder();
                     fs.lines().forEach((String s)->{
-                        String[] st= s.split(JgoDriverConstants.whitespace_charclass);
-                        Arrays.asList(st).forEach((String sd)->{
-                            logger.info(sd);
-                        });
+                       //String[] st= s.split(JgoDriverConstants.whitespace_charclass);
+                        source.append(s);
+                        source.append('\n');
+                       // sourceBuilder.addAll(Arrays.asList(st));
+//                        Arrays.asList(st).forEach((String sd)->{
+//                            logger.info(sd);
+//                        });
 
                     });
                 }
