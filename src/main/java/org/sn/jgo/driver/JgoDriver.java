@@ -1,5 +1,7 @@
 package org.sn.jgo.driver;
 
+import org.sn.jgo.ast.JgoParser;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +25,8 @@ public final class JgoDriver {
         }catch (IOException e){
 
         }
+
+
     }
 
     private static void readSourceFiles(String path) throws IOException{
@@ -44,6 +48,7 @@ public final class JgoDriver {
 //                        });
 
                     });
+                    JgoParser.parseEntry(source.toString());
                 }
 
             } catch (Exception e) {

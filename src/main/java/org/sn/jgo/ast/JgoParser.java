@@ -8,9 +8,12 @@ public final class JgoParser {
     public static void parseEntry(String source){
         int parseCnt = 0;
         char[] tokens = source.toCharArray();
-        while (true){
-
-        }
+        source.chars().filter(p-> p!='\n').forEach(ch->{
+            System.out.print((char)ch);
+        });
+//        while (true){
+//
+//        }
 
     }
 }
